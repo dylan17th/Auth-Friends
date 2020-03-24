@@ -59,7 +59,6 @@ const FriendsPage = () => {
     return (
         <div>
             <div>
-                <h4>Add Friend</h4>
                 <form onSubmit={handleSubmit}>
                     <label html='name'>Name:</label>
                     <input id='name' name='name' onChange={handleChange} value={addFriend.name} />

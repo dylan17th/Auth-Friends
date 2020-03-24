@@ -7,6 +7,9 @@ import {PrivateRoute} from './component/PrivateRoute';
 import './App.css';
 
 function App() {
+  const handleLogout = () => {
+   localStorage.clear('token')
+  }
   return (
     <div className="App">
        <div className='nav'>
@@ -14,6 +17,7 @@ function App() {
         <div className='links'>
             <Link className='link' to='/'>Login</Link>
             <Link className='link' to='/friends'>Friends List</Link>
+            <Link onClick={handleLogout}className='link' to='/'>Logout</Link>
           </div>
       </div>
       <Route className='body' exact path='/'component={Login}></Route>
