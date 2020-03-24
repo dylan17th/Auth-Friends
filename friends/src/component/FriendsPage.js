@@ -12,6 +12,10 @@ const FriendsPage = () => {
         email: ''
     })
 
+    const handleDelete = () => {
+        console.log('trying to delete')
+    }
+
     useEffect(()=>{
         axiosWithAuth().get('/api/friends')
         .then(res => {
@@ -34,10 +38,13 @@ const FriendsPage = () => {
         .post('/api/friends', addFriend)
         .then(res => {
             setFriends(res.data)
-            console.log(res)
+            setAddFriend({
+                name: '',
+                age: '',
+                email: ''
+            })
         })
         .catch(err => console.log(err))
-        
     } 
     
     return (
@@ -46,17 +53,17 @@ const FriendsPage = () => {
                 <h4>Add Friend</h4>
                 <form onSubmit={handleSubmit}>
                     <label html='name'>Name:</label>
-                    <input id='name' name='name' onChange={handleChange} />
+                    <input id='name' name='name' onChange={handleChange} value={addFriend.name} />
                     <label html='age'>Age:</label>
-                    <input id='age' name='age' onChange={handleChange}/>
+                    <input id='age' name='age' onChange={handleChange} value={addFriend.age} />
                     <label html='email'>Email:</label>
-                    <input id='email' name='email' onChange={handleChange}/>
+                    <input id='email' name='email' onChange={handleChange} value={addFriend.email} />
                     <button>Add Friend</button>
                 </form>
             </div>
             <h3>Friends List</h3>
             {friends.map(friend => (
-                <Friends friend={friend} key={friend.id}/>
+                <Friends friend={friend} key={friend.id} handleDelete={handleDelete}/>
             ))}
         </div>
     )

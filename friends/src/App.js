@@ -9,11 +9,15 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Insta-Friends</h1>
-      <Link to='/'>Login</Link>
-      <Link to='/friends'>Friends List</Link>
-      <Route exact path='/'component={Login}></Route>
-      <PrivateRoute path='/friends'component={Friends}/>
+      <div className='nav'>
+        <h1 className='title'>Insta-Friends</h1>
+        <div className='links'>
+            <Link className='link' to='/'>Login</Link>
+            <Link className='link' to='/friends'>Friends List</Link>
+          </div>
+      </div>
+      <Route className='body' exact path='/'component={Login}></Route>
+      <PrivateRoute className='body'path='/friends'component={Friends}/>
     </div>
   );
 }
