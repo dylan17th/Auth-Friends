@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 
-const Friends = () => {
+const Friends = ({friend}) => {
     return (
-        <div>Hello from the Friends Component</div>
+        <div>
+            <h4>{friend.name}</h4>
+            <div>{friend.email}</div>
+            <div>{friend.age}</div>
+        </div>
     )
 }
 
-export default Friends; 
+export default Friends;

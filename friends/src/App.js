@@ -1,5 +1,5 @@
 import React from 'react';
-import Friends from './component/Friends';
+import Friends from './component/FriendsPage';
 import Login from './component/Login';
 import {Route, Link} from 'react-router-dom';
 import {PrivateRoute} from './component/PrivateRoute'
