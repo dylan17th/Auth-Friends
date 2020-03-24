@@ -2,7 +2,7 @@ import React from 'react';
 import Friends from './component/Friends';
 import Login from './component/Login';
 import {Route, Link} from 'react-router-dom';
-import {PrivateRoute} from './utils/PrivateRoute'
+import {PrivateRoute} from './component/PrivateRoute'
 
 import './App.css';
 
