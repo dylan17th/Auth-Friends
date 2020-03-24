@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
 import Friends from './Friends'
 
-
 const FriendsPage = () => {
 
     const [ friends, setFriends ] = useState([]);
@@ -14,10 +13,8 @@ const FriendsPage = () => {
             setFriends(res.data)
         })
         .catch(err => console.log(err))
-
     }, [])
     
-
     return (
         <div>
             <h3>Friends List</h3>
