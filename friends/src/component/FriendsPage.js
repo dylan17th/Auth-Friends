@@ -12,8 +12,17 @@ const FriendsPage = () => {
         email: ''
     })
 
-    const handleDelete = () => {
-        console.log('trying to delete')
+    const handleDelete = friendId => {
+        friends.filter(friend => {
+            if (friend.id === friendId){
+                return axiosWithAuth()
+                .delete(`/api/friends/${friendId}`)
+                .then(res => setFriends(res.data))
+                .catch(err => console.log(err))
+            }else{
+                return friend
+            }
+        })
     }
 
     useEffect(()=>{

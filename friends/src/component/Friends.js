@@ -8,7 +8,7 @@ const Friends = ({friend, handleDelete}) => {
             <div>{friend.email}</div>
             <div>{friend.age}</div>
             <button onClick={handleDelete}>Delete Friend</button>
-            <button>Edit Friend</button>
+            <button onClick={() => {handleDelete(friend.id)}}>Delete Friend</button>
         </div>
     )
 }

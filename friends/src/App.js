@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className='nav'>
+       <div className='nav'>
         <h1 className='title'>Insta-Friends</h1>
         <div className='links'>
             <Link className='link' to='/'>Login</Link>
